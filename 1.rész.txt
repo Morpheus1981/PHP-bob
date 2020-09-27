@@ -1,0 +1,114 @@
+
+
+a beágyazott php kód nyitó és záró tag -je. ez a legnépszerűbb XML stílus
+
+<?php
+
+?>
+
+----------------------------------------------------
+a file kiíratása
+
+echo vagy print segítségével a print lassabb kicsivel. Amit ki szeretnénk iratni azt 
+mind '' jelek közé vagy "" közé kell kitenni és a benne lévő szöveg meg fog jelenni.
+
+echo '<p> Rendelés feldoglzva.</p>'
+
+------------------------------------------------------
+megjegyzés a php kódban a nyitó és záró tag között 
+
+// vagy # jeleket követően egysoros míg /* */ jelek között két vagy többsoros egybefüggő
+kommenteket lehet írni.
+
+-----------------------------------------------------
+
+dinamikus tartalom hozzáadása:
+
+az aktuális idő hozzáadása/kiíratása
+ 
+echo date('H:i, jS F Y');          //a date() függvény meghívása
+
+ -- H  az óra 24 órás időformátumban, az egyszámjegyű órák előtt bevezető nullával
+ -- i a percek (szükség esetén szintén bevezető nullával)
+ -- j a hónap napja (mindig nulla nélkül)
+ -- S s sorszámnév képzője (jelen esetben ez th, hiszen angolul írjuk ki a dátumot)
+ -- F a hónap tejes neve
+ -- Y az aktuális év
+
+-----------------------------------------------------
+karakterláncok összefűzése:
+
+Az összefűzés ponttal végezzük el.
+
+echo $abroncs_db.' gumiabroncs<br />';
+
+fontos tudni ,hogy az interpoláció csak a kettős idézőjellel közrefogtt karakterláncok
+esetén működik. Egyszeres idézőjelet használó sztringekben nem helyezhetjük ezzel 
+a módszerrel a változók nevét.
+pl_:
+echo '$abroncs_db gumiabroncs<br />'; egyszerűen az "$abroncs_db gumiabroncs<br />" 
+karakterláncot küldi el a böngészőnek. A kettps idézőjelen belül lévő változónév 
+helyén a változó értéke jelenik meg. Egyszeres idézőjel esetén a változó neve vagy 
+bármilyen más szöveg változatlanul lesz elküldve.
+
+------------------------------------------------------
+
+A karakterláncok meghatározásának harmadik módszere a heredoc szintakszis (<<<) használata.
+A heredoc szintakszis a karakterláncot befejező jel hazsnálatával teszi lehetővé a hosszű sztringek egyértelmű meghatározását.
+A következő példa egy háromsoros karakterláncot hoz létre és jelenít meg :
+echo <<< vege
+1.sor
+2.sor
+3.sor
+vege
+
+a vege szöveg helyett tetszoleges szó választható a lényeg az hogy a benne tárolt
+dat egyben összeolvasva tárolódik el egy karakterláncban.
+---------------------------------------------------------
+
+Azonosítók:
+számokkal nem kezdődhetnek, 
+kis és nagybetűkre való érzékenység
+tetszőleges hosszúságú betűket és számokat is tartalmazhat
+a változókat nem szükséges használatuk előtt dekralálni, 
+akkor jönnek létre amikor először értéket adunk neki.
+php adattípusok:
+
+-  Ineger- egészszám
+-  Float (másnéven double)- valós (lebegőpontos) szám
+-  String - karakterek sorozata, karakterlánc
+-  Boolean - true (igaz )vagy false (hameis) értéket felvevő logikai változó
+-  Array - tomb, tobb adatelem tárolására használható változó
+-  Object- objektum, osztálypéldányok tárolására használható változó
+
+-----------------------------------------------------------
+típuskényszerítés:
+$osszmennyiség = 0;
+$vegosszeg = (float)$osszmennyiség;
+
+A típuskényszerítést a fenti módon érhetjük el ha a változó elé zárójelben a kívánt
+adattípust írva kényszerítjük a programot a kívánt adattípusban történő tárolásra.
+
+---------------------------------------------------------------
+változó változók:
+
+$valtozo_neve = 'abroncs_db';
+
+az $abroncs_db érétkének megváltoztatására használhatjuk a $$valtozo_neve-t is.
+mely során a fenti példánál maradva 
+ha beírjuk a $$valtozo_neve = 5; 
+akkor az $abroncs_db = 5;
+
+
+---------------------------------------------------------------
+Állandók dekralálása és használata:
+
+az állandókat define függvénnyel határozhatjuk meg, és nagy nyomtatott betűvel adjuk meg 
+azok nevét valamint értékét vesszővel elválasztva a lenti példában leírtak szerint.
+A nagybetű nem kötelező de ragaszkodnunk kell ehhez mert ezzel egyértelműen 
+megkülönböztethetőek.
+
+define('ABRONCSAR', 100);
+
+-----------------------------------------------------------------
+34- 42 ig a műveleti jelek és azok hatása az értékekre ki kell nyomtatni.
