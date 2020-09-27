@@ -112,3 +112,72 @@ define('ABRONCSAR', 100);
 
 -----------------------------------------------------------------
 34- 42 ig a műveleti jelek és azok hatása az értékekre ki kell nyomtatni.
+
+
+------------------------------------------------------------------
+Változókhoz kapcsolódó függvények
+
+a gettype() valamint a settype()
+
+milyen paramétert várnak és mit adnak vissza:
+
+string gettype (mixed valtozo);
+bool settyep(mixed valtozo, string tipus);
+
+gettype() használatához mindenképpen át kell ladnunk változót. A függvény meghatározza annak
+típusát, majd a típusnevet tartalmazó szöveget ad vissza, ami bool, int , bouble (float típusok), 
+string, array, object, resource vagy NULL lehet.
+Amiben a változó típusa nem szabványos akkor a függvény az unkown type szöveget adja vissza.
+
+A settype() függvénynek két paramétere van: először átadjuk neki a változót, amelynek meg kívánjuk
+változtatni a típusát, majd az új adattípust tartalmazó karakterláncot(a típust az előző listából választhatjuk ki.)
+
+a függvények használata:
+
+$a = 56;
+echo gettype($a). '<br />';
+settype($a, 'double');
+echo gettype($a). '<br />';
+
+	A getype() első hívásakor az $a ineger typusú . A settype() hívása után típusa 
+double-ra változik. A PHP adott típusok ellenőrzsésre alkalmas függvényeket is kínál. 
+Mindegyiknek egy változó a paramétere, és true vagy false értéket ad vissza.
+
+----------------------------------------------------------------
+típusok ellenőrzése php kódban:
+
+is_array() - megállapítja, hogy a változó tömb.-e
+is_double(), is_float(), is_real() (ugyanaz a függvény) - Megállapítja, hoy a változó float típusú -e.
+is_long(), is_int(), is_intiger() (ugyanaz a függvény) - megállapítja, hogy a változó integer típusú-e.
+is_string()- megállapítja, hogy a változó string típusú-e.
+is_bool() -megállapítha, hogy a változó boolean típusú-e.
+is_object() -megállapítja , hogy a változó object típusú-e .
+is_resource() - megállapítja, hogy a változó resource típusú-e.
+is_null() -megállapítja, hogy a változó null típusú- e.
+is_scalar() -megállapítja, hogy a változó skaláris- e (integer, boolean, string vagy float típus valamelyike).
+is_numeric() -megállapítja, hogy a változó valamilyen szám vagy numerikus szöveg-e.
+is_callable() -megállapítja, hogy a változó egy érvényes függvény neve-e.
+
+
+--------------------------------------------------------
+Változók állapotának ellenőrzése
+
+--- nem értem ezt a részt és nem is működik.---
+--------------------------------------------------------
+Változók típuskonverziója_:
+ A változók típusalakítását függvényhívással is elérhetjük. Az alábbi három függvény használható erre a célra:
+
+int intval (mixed valtozo[, intalap]);
+float floatval(mmixed valtozo);
+string strval(mixed valtozo);
+
+--------------------------------------------------------
+Döntéshozatal feltételes utasításokkal.:
+if utasításra példa:
+
+if($osszmennyiség == 0)
+echo 'Egyetlen tételt sem rendelt az előző oldalon!<br />';
+
+
+
+
