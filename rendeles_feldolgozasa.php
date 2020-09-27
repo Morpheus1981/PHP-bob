@@ -70,14 +70,42 @@
 	echo "Rendelt termékek száma: ". $osszmennyiseg. "</br>";
 	$vegosszeg	= 0.00;
 
+
+
+
+
+
+
+
 if ($osszmennyiseg == 0 ) {
-	echo "Egyetlen tételt sem rendelt!<br />";
+	echo "Egyetlen tételt sem rendelt az előző oldalon!<br />";
 }else{
+if ($abroncs_db > 0)
+
 	echo $abroncs_db.' gumiabroncs<br />';
-	echo $olaj_db.' flakon olaj<br />';	
+	if ($olaj_db > 0 )
+	echo $olaj_db.' flakon olaj<br />';
+	if ($gyertya_db > 0 )	
 	echo $gyertya_db.' gyújtógyertya<br />';
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 	//kódblokk
 /*	if($osszmennyiseg == 0) {
 		echo '<p style="color:red">';
@@ -92,18 +120,28 @@ if ($osszmennyiseg == 0 ) {
 	define('OLAJAR', 10);
 	define('GYERTYAAR', 4);*/
 	
-	$vegosszeg = $abroncs_db * ABRONCSAR 
+	$vegosszeg = $abroncs_db * ABRONCSAR
 				+ $olaj_db * OLAJAR 
 				+ $gyertya_db * GYERTYAAR;
+	
 	echo "Részösszeg: $".number_format($vegosszeg, 2)."</br>";
 	$adokulcs = 0.10; // a helyi forgalmi adó 10%
 	$vegosszeg =$vegosszeg* (1+ $adokulcs);
 	echo "Végösszeg áfával: $".number_format($vegosszeg,2)."</br>";
 
 
-
-
     ?>
+<tr>
+<td>Honnan hallott Bob autóalkatrész-boltjáról?</td>
+<td><select name="honnan_hallott_rólunk">
+	<option value = "a"> Visszatérő vásárló vagyok</option>
+	<option value = "b"> Tévéreklám</option>
+	<option value = "c"> Telefonkönyv</option>
+	<option value = "d"> Ismerőstől, baráttól</option>
+</select>
+</td>
+</tr>
+
 
   </body>
 </html>
