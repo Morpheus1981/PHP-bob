@@ -43,12 +43,6 @@
     echo "<p>Rendleés feldolgozásának időpontja: ".date('H:i, jS F Y')."</p>"; 
 
 
-	echo '<p>Rendelése az alábbi: </p>';
-	echo $abroncs_db.' gumiabroncs<br />';
-	echo $olaj_db.' flakon olaj<br />';
-	echo $gyertya_db.' gyújtógyertya<br />';
-	echo ("------------------------------------ </br >");
-	echo (" ");
 
 	/*$valtozo_neve ='abroncs_db';
 	$$valtozo_neve = 5;
@@ -65,14 +59,25 @@
 	echo $olaj_db.' flakon olaj<br />';	
 	echo $gyertya_db.' gyújtógyertya<br />';
 		echo ("------------------------------------ </br >");
-	echo (" ");	$osszmennyiseg = 0;
+	echo (" ");	
+	$osszmennyiseg = 0;
 	$osszmennyiseg = $abroncs_db + $olaj_db + $gyertya_db;
 	echo "Rendelt termékek száma: ". $osszmennyiseg. "</br>";
 	$vegosszeg	= 0.00;
+	
+	
+	
 
 
-
-
+/*
+	if ($osszmennyiseg == 0) {
+		echo "Egyetlen tételt sem rendelt az alőző oldalon!<br/>";
+	}else{
+		echo $abroncs_db." Gumiabroncs<br />";
+		echo $olaj_db." flakon olaj<br />";
+		echo $gyertya_db." gyűjtógyertya<br />";
+	}
+*/
 
 
 
@@ -83,6 +88,10 @@ if ($osszmennyiseg == 0 ) {
 if ($abroncs_db > 0)
 
 	echo $abroncs_db.' gumiabroncs<br />';
+	
+	
+	
+	
 	if ($olaj_db > 0 )
 	echo $olaj_db.' flakon olaj<br />';
 	if ($gyertya_db > 0 )	
@@ -93,7 +102,14 @@ if ($abroncs_db > 0)
 
 
 
-
+if ($abroncs_db < 10) {
+$kedvezmeny = 0;
+}	elseif (($abroncs_db >= 10) && ($abroncs_db <= 49)){
+$kedvezmeny = 5;
+}	elseif (($abroncs_db >= 50) && ($abroncs_db <= 99)){            
+$kedvezmeny = 10;
+}	elseif ($abroncs_db >= 100)
+$kedvezmeny = 15; 
 
 
 
@@ -123,15 +139,29 @@ if ($abroncs_db > 0)
 	$vegosszeg = $abroncs_db * ABRONCSAR
 				+ $olaj_db * OLAJAR 
 				+ $gyertya_db * GYERTYAAR;
+				
+$kedvezmeny1 = $vegosszeg-(($vegosszeg/100) * $kedvezmeny);
+				if ($kedvezmeny>0)
+				echo "Ön mennyiségi vásárlási kedvezményben részesül: ". "$kedvezmeny". "%". "</br>";
 	
-	echo "Részösszeg: $".number_format($vegosszeg, 2)."</br>";
-	$adokulcs = 0.10; // a helyi forgalmi adó 10%
-	$vegosszeg =$vegosszeg* (1+ $adokulcs);
-	echo "Végösszeg áfával: $".number_format($vegosszeg,2)."</br>";
+	echo "Nettó végösszeg: $".number_format($kedvezmeny1, 2)."</br>";
+	$adokulcs = 0.27; // a helyi forgalmi adó 27%
+	$vegosszeg =$kedvezmeny1* (1+ $adokulcs);
+	echo "Bruttó Végösszeg áfával: $".number_format($vegosszeg,2)."</br>";
 
+$date = date('H:i, jS F Y');
+
+ $kimeneti_sztring = $date."\t".$abroncs_db." gumiabroncs \t".$olaj_db." olaj\t"
+ .$gyertya_db." gyújtógyertya\t\$".$osszmennyiseg."\n";
+
+ $fp = fopen("rendelesek.txt", 'a'); 
+ fwrite($fp, $kimeneti_sztring);
+
+
+fclose($fp);
 
     ?>
-<tr>
+          <tr>
 <td>Honnan hallott Bob autóalkatrész-boltjáról?</td>
 <td><select name="honnan_hallott_rólunk">
 	<option value = "a"> Visszatérő vásárló vagyok</option>
@@ -141,6 +171,20 @@ if ($abroncs_db > 0)
 </select>
 </td>
 </tr>
+
+<?php
+$honnan_hallott_rolunk = 1;
+if ($honnan_hallott_rolunk == "a") {
+	echo "<p> Visszatérő vásárló.</p>";
+	}elseif ($honnan_hallott_rolunk == "b") {
+		echo "<p> Tévéreklámban hallott Bobrl.</p>";
+	}else{
+		echo "<p>Nem tudjuk, honnan ismeri Bobot.</p>";
+	}
+
+?>
+
+
 
 
   </body>
