@@ -1,4 +1,33 @@
-11:00, 1st October 2020	22 gumiabroncs 	45 olaj	22 gyújtógyertya	$167
-11:00, 1st October 2020	22 gumiabroncs 	45 olaj	22 gyújtógyertya	$77
-11:01, 1st October 2020	22 gumiabroncs 	45 olaj	100 gyújtógyertya	$167
-11:01, 1st October 2020	100 gumiabroncs 	453 olaj	234 gyújtógyertya	$787
+18:06, 13th October 2020	12 gumiabroncs 	34 olaj	56 gyújtógyertya	102$
+20:34, 13th October 2020	 gumiabroncs 	 olaj	 gyújtógyertya	0$
+20:42, 13th October 2020	0 gumiabroncs 	3 olaj	4 gyújtógyertya	7$
+20:43, 13th October 2020	 gumiabroncs 	3 olaj	4 gyújtógyertya	7$
+20:43, 13th October 2020	0 gumiabroncs 	3 olaj	4 gyújtógyertya	7$
+20:45, 13th October 2020	0 gumiabroncs 	3 olaj	4 gyújtógyertya	7$
+20:45, 13th October 2020	0 gumiabroncs 	3 olaj	4 gyújtógyertya	7$
+20:45, 13th October 2020	1 gumiabroncs 	3 olaj	4 gyújtógyertya	7$
+20:46, 13th October 2020	 gumiabroncs 	 olaj	 gyújtógyertya	0$
+20:46, 13th October 2020	 gumiabroncs 	 olaj	 gyújtógyertya	0$
+20:46, 13th October 2020	 gumiabroncs 	3 olaj	3 gyújtógyertya	6$
+20:47, 13th October 2020	 gumiabroncs 	3 olaj	3 gyújtógyertya	6$
+20:47, 13th October 2020	3 gumiabroncs 	3 olaj	3 gyújtógyertya	9$
+20:53, 13th October 2020	2 gumiabroncs 	22 olaj	2 gyújtógyertya	26$
+20:54, 13th October 2020	2 gumiabroncs 	22 olaj	2 gyújtógyertya	26$
+20:55, 13th October 2020	 gumiabroncs 	22 olaj	2 gyújtógyertya	24$
+20:56, 13th October 2020	 gumiabroncs 	22 olaj	2 gyújtógyertya	24$
+20:56, 13th October 2020	 gumiabroncs 	22 olaj	2 gyújtógyertya	24$
+20:56, 13th October 2020	 gumiabroncs 	22 olaj	2 gyújtógyertya	24$
+20:57, 13th October 2020	 gumiabroncs 	22 olaj	2 gyújtógyertya	24$
+20:57, 13th October 2020	3 gumiabroncs 	22 olaj	2 gyújtógyertya	27$
+21:02, 13th October 2020	 gumiabroncs 	22 olaj	2 gyújtógyertya	24$
+21:04, 13th October 2020	11 gumiabroncs 	45 olaj	3 gyújtógyertya	59$
+06:26, 14th October 2020	 gumiabroncs 	1 olaj	2 gyújtógyertya	3$
+06:29, 14th October 2020	0 gumiabroncs 	1 olaj	2 gyújtógyertya	3$
+06:30, 14th October 2020	0 gumiabroncs 	0 olaj	2 gyújtógyertya	2$
+06:31, 14th October 2020	0 gumiabroncs 	0 olaj	2 gyújtógyertya	2$
+06:31, 14th October 2020	4 gumiabroncs 	0 olaj	2 gyújtógyertya	6$
+06:32, 14th October 2020	0 gumiabroncs 	0 olaj	0 gyújtógyertya	0$
+06:32, 14th October 2020	0 gumiabroncs 	0 olaj	0 gyújtógyertya	0$
+06:33, 14th October 2020	0 gumiabroncs 	0 olaj	0 gyújtógyertya	0$
+06:55, 14th October 2020	0 gumiabroncs 	0 olaj	0 gyújtógyertya	0$
+06:55, 14th October 2020	0 gumiabroncs 	55 olaj	0 gyújtógyertya	55$

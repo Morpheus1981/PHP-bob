@@ -31,12 +31,36 @@ az űrlap from acton tulajdonságával kerül meghívásra a php. oldal.
         <td>Gyújtógyertya</td>
         <td align="center"><input type="text" name="gyertya_db" size="3" maxlength="3" /></td>
         </tr>
+
+        <tr>
+        <td>Honnan hallott Bob autóalkatrész-boltjáról?</td>
+        <td><select name ="honnan_hallott_rolunk">
+            <option value ="a">Visszatérő vásárló vagyok</option>
+            <option value ="b">Tévéreklám</option>
+            <option value ="c">Telefonkönyv</option>
+            <option value ="d">Ismerőstől, baráttól</option>
+          </select>
+        </td>
+        </tr>
+
+
         <tr>
           <td colspan="2" align="center"><input type="submit" value="Rendelés elküldése" /></td>
           </tr>
-          </table>
-          </form>
-          
+        </table>
+      </form>
+
+          <form action="rendelesek_megtekintese.php" method="post">
+            <tr>
+              <td colspan="2" align="center"><input type="submit" value="Rendelés visszanézése" /></td>
+              </tr>
+            </form>
+
+            <form action="kiszallitas.php" method="post">
+              <tr>
+                <td colspan="2" align="center"><input type="submit" value="Kiszállítás költsége" /></td>
+                </tr>
+              </form>
 
   </body>
 </html>
